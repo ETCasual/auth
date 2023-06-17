@@ -1,0 +1,40 @@
+[package]
+edition = "2018"
+name = "auth-service"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+actix-rt = "2.2.0"
+actix-web = "4.0.0-beta.12"
+rust-argon2 = "0.8"
+async-graphql = { version = "3.0.7", features = ["uuid", "chrono"] }
+async-graphql-actix-web = { version = "3.0.7" }
+chrono = { version = "0.4.19", features = ["serde"] }
+color-eyre = "0.5.11"
+config = "0.11"
+dotenv = "0.15"
+eyre = "0.6.5"
+futures = { version = "0.3", features = ["compat"] }
+jsonwebtoken = "7.2"
+lazy_static = "1.4.0"
+regex = "1.5"
+serde = { version = "1.0.130", features = ["derive"] }
+serde_json = "1.0"
+sqlx = { version = "0.5.10", default-features = false, features = [
+    "runtime-tokio-native-tls",
+    "macros",
+    "mysql",
+    "uuid",
+    "chrono"
+] }
+tracing = "0.1.28"
+tracing-futures = "0.2.5"
+tracing-log = { version = "0.1.2", features = ["env_logger"] }
+tracing-subscriber = "0.2.24"
+uuid = { version = "0.8.2", features = ["serde", "v4"] }
+ulid = "0.5.0"
+validator = "0.14"
+validator_derive = "0.14"
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
